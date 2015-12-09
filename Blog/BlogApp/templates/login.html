@@ -1,0 +1,14 @@
+{%extends 'index.html'%}
+
+{%block page-content%}
+
+<form action='/acc_login/' method='POST'>
+
+<input type='text' name='username'/>
+<input type='password' name='password'/>
+<input type='submit' name='Login'/>
+<span style='color':red>{{log_err}} </span>
+
+</form>
+
+{%endblock%}

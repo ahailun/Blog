@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% load comments %}
+
+{%block page-content%}
+
+
+
+<div class="contents">
+	{{bbs_obj.title}} <br>
+	{{bbs_obj.content}}
+</div>
+	
+	
+<form action="/sub_comment/" method="POST">
+	{% csrf_token %}
+	<textarea cos=80  rows=1 name='comment_content'></textarea>
+	<input type="hidden" name="bbs_id" value="{{bbs_obj.id}}"/>
+	<input type="submit" name="Add conmmemt" id="id_submmit"/>
+
+</form>
+
+
+{% render_comment_list for bbs_obj %} <br>
+
+{% endblock  %}
